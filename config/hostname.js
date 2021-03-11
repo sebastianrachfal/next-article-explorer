@@ -1,3 +1,3 @@
 const prod = process.env.NODE_ENV === 'production';
 
-export default prod ? process.env.HOSTNAME : 'http://localhost:3000';
+export default prod ? '' : 'http://localhost:3000/';

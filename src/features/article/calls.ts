@@ -4,7 +4,7 @@ import hostname from '../../../config/hostname';
 
 export const fetchArticleData = async (page: number = 1): Promise<ArticleData[]> => {
 	try {
-		let data = await fetch(`${hostname}/api/graphql`, {
+		let data = await fetch(`${hostname}api/graphql`, {
 			method: 'POST',
 			body: ` makeRestCall {
                         get(path: "/articles?page=${page}") {
@@ -19,7 +19,7 @@ export const fetchArticleData = async (page: number = 1): Promise<ArticleData[]>
 };
 export const fetchArticle = async (id: number = 1): Promise<ArticlePageData> => {
 	try {
-		let data = await fetch(`${hostname}/api/graphql`, {
+		let data = await fetch(`${hostname}api/graphql`, {
 			method: 'POST',
 			body: ` publishedArticle(id: ${id}) {
                         id
