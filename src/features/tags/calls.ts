@@ -3,7 +3,7 @@ import { Tag } from './interfaces';
 
 export const fetchTagStyles = async (): Promise<Tag[]> => {
 	try {
-		let data = await fetch(`${process.env.API}/api/graphql`, {
+		let data = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/graphql`, {
 			method: 'POST',
 			body: ` makeRestCall {
                 get(path: "/tags?per_page=200") {
