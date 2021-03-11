@@ -16,7 +16,7 @@ export default function Header() {
 						<a className='mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800'>.home</a>
 					</Link>
 					<Link href='/user'>
-						<a className='mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800'>.me</a>
+						<a className='text-sm font-semibold text-gray-600 hover:text-gray-800'>.me</a>
 					</Link>
 				</nav>
 				{/* <button className='items-center px-8 py-2 font-semibold text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-blueGray-900 focus:ring focus:outline-none'>

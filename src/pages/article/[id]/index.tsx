@@ -28,7 +28,7 @@ export default function ArticleByID({ article }: IArticleByID) {
 	return article === null ? (
 		<div>Article not found</div>
 	) : (
-		<div className='relative md:px-4 px-8 py-6 w-full sm:px-0 mt-4'>
+		<div className='relative md:px-4 lg:px-8 py-6 w-full sm:px-0 mt-4'>
 			<div className='rounded-md shadow-2xl'>
 				<Image
 					width='1500'
@@ -45,7 +45,7 @@ export default function ArticleByID({ article }: IArticleByID) {
 						<ArticleTags id={article.id} tags={article.tags} />
 					</div>
 				</div>
-				<div className='markdown-body p-6 px-20 flex flex-col text-justify'>
+				<div className='markdown-body p-6 sm:px-2 md:px-10 lg:px-20 flex flex-col text-justify'>
 					<ReactMarkdown
 						plugins={[gfm]}
 						source={article?.bodyMarkdown
@@ -94,7 +94,7 @@ export default function ArticleByID({ article }: IArticleByID) {
 						<p className='tracking-tighter mt-2 mb-3 text-lg font-bold text-black lg:text-5xl title-font'>
 							Comments({commentCount})
 						</p>
-						<div className='flex justify-center'>
+						<div className='flex'>
 							<CommentSection comments={article.comments} />
 						</div>
 					</div>
