@@ -1,65 +1,8 @@
-# A [NextJS](https://nextjs.org/) template with typescript, tailwindcss and storybook support
+# Article explorer
 
-> The configuration of NextJS, TailwindCSS and Storybook can be **complex** 😰 🤪
-> 👉 So we have decided to make this template public 🎉
+Simple Next app for viewing dev.to articles using Onegraph's graphql endpoints.
 
-This project was bootstrapped with [npx create-next-app](https://nextjs.org/learn/basics/create-nextjs-app/setup) and we have added support for:
-
-- ✅ [Typescript](https://www.typescriptlang.org/)
-- ✅ [Taillwindcss](https://www.tailwindcss.com)
-- ✅ [Storybook](https://storybook.js.org/)
-- ✅ [Jest](https://jestjs.io/)
-- ✅ [Import SVG as React Component (SVGR)](https://react-svgr.com/) (Thanks to [@neoziro](https://twitter.com/neoziro))
-
-You are welcome to contribute to this project to make it better. Contact us at [contact@elitizon.com](contact@elitizon.com)
-
-Created with ❤️ by [Elitizon](https://www.elitizon.com)
-
-This template is available at [https://github.com/elitizon/nextjs-tailwind-storybook](https://github.com/elitizon/nextjs-tailwind-storybook)
-
-## To use this template:
-
-- clone it
-- remove the .git folder
-- git init .
-- git add .
-- git commit -m "First commit"
-
-## Structure of the template
-
-```bash
-.
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── README.md
-├── SECURITY.md
-├── build.toml
-├── next-env.d.ts
-├── nextjs.config.js
-├── out
-│   ├── 404.html
-│   ├── _next
-│   ├── favicon.ico
-│   ├── index.html
-│   └── vercel.svg
-├── package.json
-├── postcss.config.js
-├── public
-│   ├── favicon.ico
-│   └── vercel.svg
-├── src
-│   ├── assets
-│   ├── components
-│   ├── pages
-│   └── styles
-├── tailwind.config.js
-├── tsconfig.json
-└── yarn.lock
-
-```
-
-Pages and components are developed in `src` directory.
+Boilerplate available at [https://github.com/elitizon/nextjs-tailwind-storybook](https://github.com/elitizon/nextjs-tailwind-storybook), author: [Elitizon](https://www.elitizon.com)
 
 ## Install all the dependencies
 
@@ -73,7 +16,7 @@ In the project directory, you can run:
 
 **Results:**
 
-```bash
+````bash
 ready - started server on http://localhost:3000
    ✅ purgeEnabled=false
 
@@ -92,12 +35,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-### 👉 `yarn storybook`
-
-Runs storybook.
-
-Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
 
 ### 👉 `yarn test`
 
@@ -179,11 +116,3 @@ Export the output of the `yarn build` command execution to the `./out` directory
 To launch a **static server** from the `./out` directory. This command can be useful to control the outcome of `yarn export`.
 
 `yarn build` and `yarn export` must be executed before to use this command.
-
-## Learn More
-
-You can learn more in the [NextJS documentation](https://nextjs.org/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-To learn how to develop UIs with component and design systems with Storybook, check out the [Learn Storybook documentation](https://www.learnstorybook.com/)
