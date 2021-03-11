@@ -1,4 +1,4 @@
-import { Tag } from '../tags/tagsInterfaces';
+import { Tag } from '../tags/interfaces';
 
 export interface ArticlesState {
 	isFetched: boolean;
