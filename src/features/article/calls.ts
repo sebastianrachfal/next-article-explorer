@@ -19,7 +19,6 @@ export const fetchArticleData = async (page: number = 1): Promise<ArticleData[]>
 	}
 };
 export const fetchArticle = async (id: number = 1): Promise<ArticlePageData> => {
-	console.log(process.env.NEXT_PUBLIC_HOSTNAME);
 	try {
 		let data = await fetch(`${hostname}/api/graphql`, {
 			method: 'POST',

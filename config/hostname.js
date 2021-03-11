@@ -1,1 +1,2 @@
-export default process.env.NEXT_PUBLIC_HOSTNAME;
+const hn = process.env.NEXT_PUBLIC_HOSTNAME;
+export default hn;
