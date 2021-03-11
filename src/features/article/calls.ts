@@ -3,9 +3,9 @@ import { ArticlePageData } from './pageInterfaces';
 import hostname from '../../../config/hostname';
 
 export const fetchArticleData = async (page: number = 1): Promise<ArticleData[]> => {
-	console.log(process.env.NEXT_PUBLIC_VERCEL_URL);
+	console.log(hostname);
 	try {
-		let data = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/graphql`, {
+		let data = await fetch(`${hostname}/api/graphql`, {
 			method: 'POST',
 			body: ` makeRestCall {
                         get(path: "/articles?page=${page}") {
