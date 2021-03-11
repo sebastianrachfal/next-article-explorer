@@ -45,4 +45,7 @@ module.exports = {
 	images: {
 		domains: ['unsplash.com', 'res.cloudinary.com', 'dev.to'],
 	},
+	env: {
+		API: process.env.API_HOST,
+	},
 };

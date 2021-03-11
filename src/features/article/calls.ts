@@ -1,11 +1,9 @@
 import { ArticleData } from './interfaces';
 import { ArticlePageData } from './pageInterfaces';
-import hostname from '../../../config/hostname';
 
 export const fetchArticleData = async (page: number = 1): Promise<ArticleData[]> => {
-	console.log(hostname);
 	try {
-		let data = await fetch(`${hostname}/api/graphql`, {
+		let data = await fetch(`${process.env.API}/api/graphql`, {
 			method: 'POST',
 			body: ` makeRestCall {
                         get(path: "/articles?page=${page}") {
@@ -20,7 +18,7 @@ export const fetchArticleData = async (page: number = 1): Promise<ArticleData[]>
 };
 export const fetchArticle = async (id: number = 1): Promise<ArticlePageData> => {
 	try {
-		let data = await fetch(`${hostname}/api/graphql`, {
+		let data = await fetch(`${process.env.API}/api/graphql`, {
 			method: 'POST',
 			body: ` publishedArticle(id: ${id}) {
                         id
