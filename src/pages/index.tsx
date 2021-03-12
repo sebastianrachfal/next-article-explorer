@@ -66,9 +66,23 @@ export default function Home({ premadeData }) {
 }
 
 export async function getStaticProps() {
+	const data = await fetch(process.env.API_ENDPOINT, {
+		method: 'POST',
+		headers: {
+			'Content-Type': '/applicationjson',
+			authorization: `Bearer ${process.env.BEARER_TOKEN}`,
+		},
+		body: JSON.stringify({
+			query: `{devTo(auths:{devToAuth:{apiKey:"${process.env.DEVTO_KEY}"}}) {makeRestCall {
+				get(path: "/articles?page=1") {
+					jsonBody
+				}
+			}}}`,
+		}),
+	}).then((r) => r.json());
 	return {
 		props: {
-			premadeData: await fetchArticleData(1),
+			premadeData: data.data.devTo.makeRestCall.get.jsonBody,
 		},
 		revalidate: 60,
 	};

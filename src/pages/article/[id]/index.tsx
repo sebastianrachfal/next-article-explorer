@@ -9,7 +9,7 @@ import CommentSection from '../../../components/CommentSection';
 import { Heart, Comment } from '../../../components/ArticleIcons';
 
 import { ArticlePageData, ArticlePageComment } from '../../../features/article/pageInterfaces';
-import { fetchArticleData } from '../../../features/article/calls';
+import { ArticleData } from '../../../features/article/interfaces';
 
 import { fetchArticle } from '../../../features/article/calls';
 
@@ -114,17 +114,34 @@ export const Code = ({ language, value }) => {
 	);
 };
 
-export const getStaticProps = async (context) => ({
-	props: {
-		article: await fetchArticle(context.params.id),
-	},
-});
-
-export const getStaticPaths = async () => {
-	const articles = await fetchArticleData(1);
-	const p = articles.map((article) => ({ params: { id: article.id.toString() } }));
+export const getServerSideProps = async (context) => {
 	return {
-		paths: p,
-		fallback: true,
+		props: {
+			article: await fetchArticle(context.params.id),
+		},
 	};
 };
+
+// export const getStaticPaths = async () => {
+// 	const articles = await fetchArticleData(1);
+// 	const p = articles.map((article) => ({ params: { id: article.id.toString() } }));
+// 	return {
+// 		paths: p,
+// 		fallback: true,
+// 	};
+// };
+// export const fetchArticleData = async (page: number = 1): Promise<ArticleData[]> => {
+// 	try {
+// 		let data = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/graphql`, {
+// 			method: 'POST',
+// 			body: ` makeRestCall {
+//                         get(path: "/articles?page=${page}") {
+//                             jsonBody
+//                         }
+//                     }`,
+// 		}).then((r) => r.json());
+// 		return data.makeRestCall.get.jsonBody;
+// 	} catch (err) {
+// 		throw new Error(err.message);
+// 	}
+// };
