@@ -65,12 +65,11 @@ export default function Home({ premadeData }) {
 	);
 }
 
-export async function getInitialProps() {
-	const data = await fetchArticleData(1);
-
+export async function getStaticProps() {
 	return {
 		props: {
-			premadeData: data,
+			premadeData: await fetchArticleData(1),
 		},
+		revalidate: 60,
 	};
 }

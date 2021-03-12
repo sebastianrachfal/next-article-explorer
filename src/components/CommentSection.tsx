@@ -11,7 +11,7 @@ interface ICommentProps {
 
 const Comment = ({ comment, flipped = true }: ICommentProps) => {
 	return (
-		<div className='flex text-left comment'>
+		<div className='flex text-left comment w-full'>
 			<div className='flex-shrink-0 mr-3'>
 				<img
 					className='mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10 profile-picture'
@@ -44,7 +44,7 @@ const Comment = ({ comment, flipped = true }: ICommentProps) => {
 
 export default function CommentSection({ comments }: ICommentSectionProps) {
 	return (
-		<div className='space-y-4 p-0 md:p-10 lg:p-20'>
+		<div className='space-y-4 p-0 md:p-10 lg:px-20 lg:py-10 w-full overflow-x-auto'>
 			{comments.map((c) => (
 				<Comment comment={c} key={'comment_' + c.idCode} />
 			))}

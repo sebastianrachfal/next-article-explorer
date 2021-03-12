@@ -20,7 +20,7 @@ export default function ArticleTags({ id, tags = [] }: IArticleTagsParams) {
 							backgroundColor: curT ? curT.bg_color_hex : 'white',
 							color: curT ? curT.text_color_hex : '#9CACCB',
 						}}
-						className={`p-1 rounded-md text-sm ${i === tags.length - 1 ? '' : 'mr-2'}`}
+						className={`p-1 rounded-md mt-2 text-sm ${i === tags.length - 1 ? '' : 'mr-2'}`}
 						key={`tag_${id}_${tag}`}
 					>
 						#{tag}

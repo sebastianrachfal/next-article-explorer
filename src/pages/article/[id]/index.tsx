@@ -9,6 +9,8 @@ import CommentSection from '../../../components/CommentSection';
 import { Heart, Comment } from '../../../components/ArticleIcons';
 
 import { ArticlePageData, ArticlePageComment } from '../../../features/article/pageInterfaces';
+import { fetchArticleData } from '../../../features/article/calls';
+
 import { fetchArticle } from '../../../features/article/calls';
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -90,7 +92,7 @@ export default function ArticleByID({ article }: IArticleByID) {
 			</div>
 			<div ref={commentRef} id='comments' className='rounded-md shadow-2xl bg-white mt-10'>
 				{commentCount > 0 ? (
-					<div className='p-6 pt-2'>
+					<div className='lg:p-6 p-4'>
 						<p className='tracking-tighter mt-2 mb-3 text-lg font-bold text-black lg:text-5xl title-font'>
 							Comments({commentCount})
 						</p>
@@ -112,8 +114,17 @@ export const Code = ({ language, value }) => {
 	);
 };
 
-export const getServerSideProps = async (context) => ({
+export const getStaticProps = async (context) => ({
 	props: {
 		article: await fetchArticle(context.params.id),
 	},
 });
+
+export const getStaticPaths = async () => {
+	const articles = await fetchArticleData(1);
+	const p = articles.map((article) => ({ params: { id: article.id.toString() } }));
+	return {
+		paths: p,
+		fallback: true,
+	};
+};
